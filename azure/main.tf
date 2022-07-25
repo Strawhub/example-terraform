@@ -8,7 +8,7 @@ resource "azurerm_linux_virtual_machine" "my_vm" {
   resource_group_name = "fake_resource_group"
   location            = "eastus"
 
-  size           = "Basic_A2" # <<<<< Try changing this to Basic_A4 to compare the costs
+  size           = "Basic_A4" # <<<<< Try changing this to Basic_A4 to compare the costs
   admin_username = "fakeuser"
   admin_password = "fakepass"
 
@@ -45,7 +45,7 @@ resource "azurerm_app_service_plan" "elastic" {
 
 resource "azurerm_function_app" "my_function" {
   name                       = "hello-world"
-  location                   = "uksouth" # <<<<< Try changing this to EP3 to compare the costs
+  location                   = "EP3" # <<<<< Try changing this to EP3 to compare the costs
   resource_group_name        = "fake_resource_group"
   app_service_plan_id        = azurerm_app_service_plan.elastic.id
   storage_account_name       = "fakestorageaccountname"
